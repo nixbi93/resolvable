@@ -83,7 +83,7 @@ func registerContainers(docker *dockerapi.Client, events chan *dockerapi.APIEven
 			if container.NetworkSettings.IPAddress != "" {
 				return net.ParseIP(container.NetworkSettings.IPAddress), nil
 			}
-			log.Printf("Debug", container.NetworkSettings)
+			log.Printf("Debug", container.NetworkSettings["bridge-services"])
 			log.Printf("Debug", container.HostConfig.NetworkMode)
 
 			if container.HostConfig.NetworkMode == "host" {
