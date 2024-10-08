@@ -1,6 +1,7 @@
 FROM gliderlabs/alpine:3.3
 ENTRYPOINT ["/bin/resolvable"]
 
+RUN apk update
 RUN apk add --no-cache -t build-deps go git mercurial
 COPY ./config /config
 COPY . /src
