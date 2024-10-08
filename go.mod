@@ -1,6 +1,6 @@
-package main
+resolvable
 
-import (
+require (
 	_ "github.com/gliderlabs/resolvable/resolver"
 	_ "github.com/gliderlabs/resolvable/systemd"
 )
