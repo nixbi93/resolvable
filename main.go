@@ -83,8 +83,8 @@ func registerContainers(docker *dockerapi.Client, events chan *dockerapi.APIEven
 			if container.NetworkSettings.IPAddress != "" {
 				return net.ParseIP(container.NetworkSettings.IPAddress), nil
 			}
-			fmt.Errorf("unknown network mode", container.NetworkSettings.IPAddress)
-			fmt.Errorf("unknown network mode", container.HostConfig.NetworkMode)
+			log.Printf("Debug", container.NetworkSettings.IPAddress)
+			log.Printf("Debug", container.HostConfig.NetworkMode)
 
 			if container.HostConfig.NetworkMode == "host" {
 				if hostIP == nil {
