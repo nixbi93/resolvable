@@ -80,8 +80,8 @@ func registerContainers(docker *dockerapi.Client, events chan *dockerapi.APIEven
 
 	getAddress := func(container *dockerapi.Container) (net.IP, error) {
 		for {
-			if container.NetworkSettings.IPAddress != "" {
-				return net.ParseIP(container.NetworkSettings.IPAddress), nil
+			if container.NetworkSettings.Networks["bridge-services"].IPAddress != "" {
+				return net.ParseIP(container.NetworkSettings.Networks["bridge-services"].IPAddress), nil
 			}
 			log.Printf("Debug", container.NetworkSettings.Networks["bridge-services"].IPAddress)
 			log.Printf("Debug", container.HostConfig.NetworkMode)
