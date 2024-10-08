@@ -1,4 +1,4 @@
-FROM gliderlabs/alpine:3.3
+FROM alpine:3.14
 ENTRYPOINT ["/bin/resolvable"]
 
 RUN apk update
