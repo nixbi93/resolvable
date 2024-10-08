@@ -1,6 +1,8 @@
-resolvable
+module resolvable
+
+go 1.14
 
 require (
-	_ "github.com/gliderlabs/resolvable/resolver"
-	_ "github.com/gliderlabs/resolvable/systemd"
+	"github.com/gliderlabs/resolvable/resolver"
+	"github.com/gliderlabs/resolvable/systemd"
 )
