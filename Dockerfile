@@ -1,4 +1,4 @@
-FROM alpine:3.14
+FROM golang:alpine
 ENTRYPOINT ["/bin/resolvable"]
 
 RUN apk update
