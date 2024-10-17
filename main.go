@@ -237,7 +237,8 @@ func run() error {
 	resolverDomain := getopt("RESOLVER_DOMAIN", "docker")
 	resolverIp := getopt("RESOLVER_IP", "localhost")
 	resolverPort := getopt("RESOLVER_PORT", "53")
-	dnsResolver.AddUpstream(resolverDomain, net.ParseIP(resolverIp), strconv.Atoi(resolverPort), resolverDomain)
+	resolverPort, err = strconv.Atoi(resolverPort)
+	dnsResolver.AddUpstream(resolverDomain, net.ParseIP(resolverIp), resolverPort, resolverDomain)
 
 	resolvConfig, err := dns.ClientConfigFromFile("/etc/resolv.conf")
 	if err != nil {
