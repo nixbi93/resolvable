@@ -10,11 +10,8 @@ import (
 	"strconv"
 	"strings"
 	"syscall"
-
 	"github.com/miekg/dns"
-
-	"github.com/gliderlabs/resolvable/resolver"
-
+	"resolver"
 	dockerapi "github.com/fsouza/go-dockerclient"
 )
 
