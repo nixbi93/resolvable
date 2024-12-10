@@ -11,7 +11,7 @@ import (
 	"strings"
 	"syscall"
 	"github.com/miekg/dns"
-	"/src/resolver"
+	"resolvable/src/resolver"
 	dockerapi "github.com/fsouza/go-dockerclient"
 )
 
